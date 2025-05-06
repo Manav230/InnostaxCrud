@@ -1,6 +1,5 @@
 package com.example.crud.Model;
 
-import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
@@ -12,7 +11,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
     private String email;
 
     private String firstName;
