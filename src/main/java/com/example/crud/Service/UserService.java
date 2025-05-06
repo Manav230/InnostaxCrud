@@ -26,9 +26,9 @@ public class UserService {
                 userRepository.findById(id).orElse(null);
     }
 
-    public void delete(int id) {
+ public void delete(int id) {
         userRepository.deleteById(id);
-    }
+ }
 
     public User update(int id, User user) {
         userRepository.findById(user.getId()).orElse(null);

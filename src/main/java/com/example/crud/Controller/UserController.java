@@ -20,8 +20,9 @@ public class UserController {
         return userService.save(user);
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<User> getAllUsers() {
+        System.out.println("Called getAllUsers()");
         return userService.findAll();
     }
 
