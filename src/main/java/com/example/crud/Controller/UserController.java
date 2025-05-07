@@ -4,6 +4,8 @@ import com.example.crud.Dao.UserRepository;
 import com.example.crud.Model.User;
 import com.example.crud.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +19,7 @@ public class UserController {
 
     @PostMapping("/createUser")
     public User createUser(@RequestBody User user) {
-        return userService.save(user);
+       return userService.save(user);
     }
 
     @GetMapping("/")
@@ -32,12 +34,24 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUserById(@PathVariable int id) {
-         userRepository.deleteById(id);
+    public ResponseEntity<String> deleteUserById(@PathVariable int id) {
+        boolean deleted = userService.delete(id);
+        if (deleted) {
+            return ResponseEntity.ok("User deleted");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
     }
 
+
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable int id,@RequestBody User user) {
-        return userService.update(id,user);
+    public ResponseEntity<String> updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+        boolean updated = userService.update(id, updatedUser);
+        if (updated) {
+            return ResponseEntity.ok("User updated");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
     }
+
 }
