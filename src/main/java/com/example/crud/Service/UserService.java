@@ -1,7 +1,7 @@
 package com.example.crud.Service;
 
-import com.example.crud.Dao.UserRepository;
-import com.example.crud.Model.User;
+import com.example.crud.Dao.primary.UserRepository;
+import com.example.crud.Model.primary.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

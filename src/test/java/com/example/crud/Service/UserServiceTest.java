@@ -1,11 +1,9 @@
 package com.example.crud.Service;
 
-import com.example.crud.Dao.UserRepository;
-import com.example.crud.Model.User;
+import com.example.crud.Dao.primary.UserRepository;
+import com.example.crud.Model.primary.User;
 import com.example.crud.config.TestConfig;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;

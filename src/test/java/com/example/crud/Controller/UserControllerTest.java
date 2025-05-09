@@ -1,7 +1,7 @@
 package com.example.crud.Controller;
 
-import com.example.crud.Dao.UserRepository;
-import com.example.crud.Model.User;
+import com.example.crud.Dao.primary.UserRepository;
+import com.example.crud.Model.primary.User;
 import com.example.crud.Service.UserService;
 import com.example.crud.config.TestConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
